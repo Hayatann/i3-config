@@ -37,8 +37,14 @@ exec --no-startup-id nm-applet
 # fctix
 exec --no-startup-id fctix5
 
+# nitrogen
+exec --no-startup-id "nitrogen --restore"
+
 # flameshot
 exec --no-startup-id flameshot
+
+# picom
+exec --no-startup-id picom
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -278,10 +284,10 @@ bar {
         urgent_workspace   $green $green $background
         binding_mode       $green $green $background
     }
-    status_command /usr/bin/bumblebee-status -m disk:root cpu \
-        memory load arch-update aur-update date time \
-		-p root.path=/ time.format="%H:%M:%S" date.format="%a, %b %m/%d" \
-		-t solarized-powerline
+    status_command /usr/bin/bumblebee-status -m title disk:root cpu \
+        memory load arch-update aur-update date time system\
+		-p root.path=/ title.max=42 time.format="%H:%M:%S" date.format="%a, %b %m/%d" \
+		-t iceberg-contrast
 }
 
 
