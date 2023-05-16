@@ -35,7 +35,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # fctix
-exec --no-startup-id fctix5
+exec --no-startup-id "fctix5 -d"
+
+# discord
+exec --no-startup-id discord
 
 # nitrogen
 exec --no-startup-id "nitrogen --restore"
