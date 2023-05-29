@@ -45,9 +45,17 @@ exec --no-startup-id "nitrogen --restore"
 
 # flameshot
 exec --no-startup-id flameshot
+bindsym $mod+Shift+s exec "flameshot gui"
 
 # picom
 exec --no-startup-id picom
+
+# playerctl
+exec --no-startup-id "playerctld daemon"
+
+# polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -267,30 +275,28 @@ set $magenta #b48ead
 set $cyan #96b5b4
 set $white #c0c5ce
 
-bar {
-    font pango:UDEV Gothic 35 11
-    mode dock
-    position top
-    workspace_buttons yes
-    strip_workspace_numbers yes
-    binding_mode_indicator yes
-    tray_padding 2
-    colors {
-        background $background
-        focused_background $background
-        statusline $lightred
-        focused_statusline $lightred
-        # 左からborder, bg, fg
-        focused_workspace  $orange $orange $background
-        active_workspace $background $background $foreground
-        inactive_workspace $background $background $foreground
-        urgent_workspace   $green $green $background
-        binding_mode       $green $green $background
-    }
-    status_command /usr/bin/bumblebee-status -m title disk:root cpu \
-        memory load arch-update aur-update date time system\
-		-p root.path=/ title.max=42 time.format="%H:%M:%S" date.format="%a, %b %m/%d" \
-		-t iceberg-contrast
-}
-
-
+# bar {
+#     # font pango:UDEV Gothic 35 11
+#     # mode dock
+#     # position top
+#     # workspace_buttons yes
+#     # strip_workspace_numbers yes
+#     # binding_mode_indicator yes
+#     # tray_padding 2
+#     # colors {
+#     #     background $background
+#     #     focused_background $background
+#     #     statusline $lightred
+#     #     focused_statusline $lightred
+#     #     # 左からborder, bg, fg
+#     #     focused_workspace  $orange $orange $background
+#     #     active_workspace $background $background $foreground
+#     #     inactive_workspace $background $background $foreground
+#     #     urgent_workspace   $green $green $background
+#     #     binding_mode       $green $green $background
+#     # }
+#     # status_command /usr/bin/bumblebee-status -m title disk:root cpu \
+#     #     memory load arch-update aur-update date time system\
+# 	# 	-p root.path=/ title.max=42 time.format="%H:%M:%S" date.format="%a, %b %m/%d" \
+# 	# 	-t iceberg-contrast
+# }
