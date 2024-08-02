@@ -35,7 +35,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # fctix
-exec --no-startup-id "fctix5 -d"
+exec --no-startup-id "fcitx5 -d"
 
 # discord
 exec --no-startup-id discord
@@ -146,6 +146,11 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+
+# titlebar
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
 
 # gaps
 gaps top 4
